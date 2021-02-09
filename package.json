@@ -1,0 +1,17 @@
+{
+  "name": "franklinsbio",
+  "version": "1.0.0",
+  "description": "personal site built with eleventy, pug, and graohql for FranklinsHand",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "FranklinsHand",
+  "license": "ISC",
+  "devDependencies": {
+    "@11ty/eleventy": "^0.11.1"
+  },
+  "dependencies": {
+    "marked": "^2.0.0"
+  }
+}

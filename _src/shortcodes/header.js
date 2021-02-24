@@ -3,7 +3,7 @@ module.exports = function(eleventyConfig) {
     return `
   <header>
     <svg> <!-- svg placeholder for logo --> </svg>
-    <h1>Franklhand</h1>
+    <h1>Franklinshand</h1>
     ${this.nav()}
   </header>
     `

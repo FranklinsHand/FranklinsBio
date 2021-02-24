@@ -3,10 +3,9 @@ module.exports = function(eleventyConfig) {
     //use block style to make it all line up
     return `
     <nav>
-      <a href="/home/">Home</a> |
-      <a href="/about/">About</a> |
-      <a href="/garden/">Digital Garden</a> |
-      <a href="/possum/">possums???</a>
+      <a href="/index.html">Home</a> |
+      <a href="/about.html">About</a> |
+      <a href="blog/1.html">Blog<a>
     </nav>
     `
   });

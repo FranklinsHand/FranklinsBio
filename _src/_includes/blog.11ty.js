@@ -13,30 +13,41 @@ exports.data = {
 
 
 exports.render = function(data) {
-  console.log(data.pagination.href)
-  return `
-    <a href="${data.pagination.href.first}">First<a>
+
+  function pageNav(page) {
+    console.log(page)
+    return `
+    ${data.pagination.href.first !== page.url
+      ? `<a href="${data.pagination.href.first}">First<a>`
+      : `<a href="">First<a>`
+      }
     ${data.pagination.href.previous !== null
-      ? `<a href="${data.pagination.href.previous}">${data.pagination.pageNumber - 1}<a>`
-      : ``}
+      ? `<a href="${data.pagination.href.previous}">Previous<a>`
+      : `<a href="">Previous<a>`}
     ${data.pagination.href.next !== null
-      ? `<a href="${data.pagination.href.next}">${data.pagination.pageNumber + 1}<a>`
-      : ``}
-      <a href="${data.pagination.href.last}">Last<a>
+      ? `<a href="${data.pagination.href.next}">Next<a>`
+      : `<a href="">Next<a>`}
+    ${data.pagination.href.last !== page.url
+      ? `<a href="${data.pagination.href.last}">Last<a>`
+      : `<a href="">Last<a>`
+      }
+      `
+  }
+
+  console.log(this)
+  return `
+      ${pageNav(this.page)}
       <main>
         ${data.post.map(post => `
           <article>
-            <a href="/blog/${post.name}.html">${(post.name)}</a>
+            <a href="/blog/${post.name}.html">
+            <h2>${post.name}</h2>
             <p>${(post.date)}<p>
             <p>${(post.description)}<p>
+            </a>
           </article>
           `).join('')}
       </main>
-      ${data.pagination.href.previous !== null
-        ? `<a href="${data.pagination.href.previous}">${data.pagination.pageNumber - 1}<a>`
-        : `First`}
-      ${data.pagination.href.next !== null
-        ? `<a href="${data.pagination.href.next}">${data.pagination.pageNumber + 1}<a>`
-        : `Last`}
+      ${pageNav(this.page)}
     `;
 }

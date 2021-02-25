@@ -9,6 +9,8 @@ module.exports = function(eleventyConfig) {
     <meta name="author" content="Jalex">
     <meta name="application-name" content="FranklinsBio">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <link href="/_src/styles/index.css" rel="stylesheet">
   </head>
     `
   });

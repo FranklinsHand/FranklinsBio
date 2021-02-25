@@ -3,7 +3,7 @@ exports.data = {
     pagination: {
       data: "pages",
       size: 1,
-      alias: "webPage",
+      alias: "webPage", //IMPORTANT: you can't use 'page'
     },
   //      eleventyComputed: { currently broken in 11ty. outputs url /possum/#/name. may be fixed in the future.
   //        permalink: data => `/possum/${data.possum.name}.html`
@@ -17,8 +17,7 @@ exports.render = function(data) {
   const markedUP = marked(data.webPage.content);
   return `
       <main>
-        <h2>${data.webPage.name}</h2>
-        <p>${markedUP}<p>
+        ${markedUP}
       </main>
   `;
 }

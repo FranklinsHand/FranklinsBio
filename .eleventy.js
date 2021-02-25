@@ -4,10 +4,19 @@ const fs = require("fs");
 
 const src = require("./_src/")
 
+const pluginTailwindCSS = require("eleventy-plugin-tailwindcss");
+
 module.exports =  function(eleventyConfig) {
 
   //exposes eleventyConfig function to the 'includes folder'
   src(eleventyConfig)
+
+  eleventyConfig.addPlugin(pluginTailwindCSS, {
+    src: "_src/styles/index.css",
+    dest: ".",
+    minify: true,
+    configFile: "tailwind.config.js",
+  });
 
   eleventyConfig.setBrowserSyncConfig({//code to make 404 page work. I have no idea how it works tho lol so don't touch it
     callbacks: {

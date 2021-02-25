@@ -8,5 +8,9 @@ module.exports = function(){
       "name": "404",
       "content": "## UH OH!\n\n Looks like someone lost their way\n\n### navigate back where you where\n\n## OR\n\n### Try hitting one of the buttons at the top of the screen"
     },
+    {
+      "name": "about",
+      "content": "about me page"
+    }
   ]
 }
